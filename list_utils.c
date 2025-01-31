@@ -31,9 +31,19 @@ void ft_lstadd_back(t_list **lst, int data) {
     (tmp)->next = new;
 }
 
+t_list	*ft_lstlast(t_list *lst)
+{
+	while (lst && lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
+}
 
 
-void print_list(t_list *lst) {
+
+void print_list(t_list *lst,char *str) {
+    printf("List %s : \t ",str); 
     while (lst) {
         printf("[%d] --> ", lst->data);
         lst = lst->next;
