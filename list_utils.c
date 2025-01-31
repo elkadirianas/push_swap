@@ -16,6 +16,23 @@ void ft_lstadd_front(t_list **lst, int data) {
     *lst = new;
 }
 
+void ft_lstadd_back(t_list **lst, int data) {
+    t_list *new = ft_lstnew(data);
+    t_list *tmp = *lst ; 
+    if (!new)
+        return;
+    if(!(*lst)){
+        *lst=new; 
+        return ; 
+    }
+    while ((tmp) && (tmp)->next)
+        (tmp)=(tmp)->next; 
+    
+    (tmp)->next = new;
+}
+
+
+
 void print_list(t_list *lst) {
     while (lst) {
         printf("[%d] --> ", lst->data);

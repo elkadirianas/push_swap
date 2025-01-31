@@ -15,7 +15,8 @@ typedef struct s_list {
 
 t_list *ft_lstnew(int data); 
 void ft_lstadd_front(t_list **lst, int data); 
-void print_list(t_list *lst); 
+void print_list(t_list *lst);
+void ft_lstadd_back(t_list **lst, int data); 
 
 // string utils
 

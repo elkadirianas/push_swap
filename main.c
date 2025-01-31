@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
     int i = 1; 
 
     while (i < argc) {
-        ft_lstadd_front(&stack, ft_atoi(argv[i])); 
+        ft_lstadd_back(&stack, ft_atoi(argv[i])); 
         i++;  
     }
 
