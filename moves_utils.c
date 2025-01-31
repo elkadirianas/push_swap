@@ -1,34 +1,40 @@
 #include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 15:19:11 by moboulan          #+#    #+#             */
+/*   Updated: 2024/12/25 20:47:44 by moboulan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void rotate(t_list *a){
-    if(!a || !(a->next))
-        return ;
-    t_list *tmp ; 
-    int temp ; 
-    tmp = a->next ;
-    temp = a->data; 
-    a->data=ft_lstlast(a)->data; 
-    while(tmp){
-        swap_int(&temp,&(tmp->data)); 
-        tmp=tmp->next; 
-    }
+#include "push_swap.h"
+
+void	swap(t_list *lst)
+{
+	int	temp;
+
+	if (!lst || !lst->next)
+		return ;
+    swap_int(&(lst->data),&(lst->next->data)); 
 }
 
-void rev_rotate(t_list *a){
-    if(!a || !(a->next))
-        return ;
-    swap_int(&(a->data),&(ft_lstlast(a)->data)); 
-    t_list *tmp ;
-    // int temp ; 
-    tmp = a ;
-    // temp = (a->next)->data; 
-    while(tmp && tmp->next && (tmp->next)->next){
-        swap_int(&tmp->data,&((tmp->next)->data)); 
-        tmp=tmp->next; 
-    }
+void	push(t_list **a, t_list **b)
+{
+	t_list	*tmp;
+
+	if (!a || !(*b))
+		return ;
+	tmp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-void	ft_lstrotate(t_list **lst)
+void	rotate(t_list **lst)
 {
 	t_list	*node;
 	t_list	*last;
@@ -42,35 +48,18 @@ void	ft_lstrotate(t_list **lst)
 	*lst = node;
 }
 
+void	rev_rotate(t_list **lst)
+{
+	t_list	*last;
+	t_list	*second_last;
 
-void push(t_list **a, t_list **b) {
-    if (!a || !*a) return;  
-
-    t_list *tmp = *a;
-    t_list *prev = NULL;
-
-    while (tmp->next) {
-        prev = tmp;
-        tmp = tmp->next;
-    }
-
-
-    if (!prev)
-        *a = NULL;
-    else
-        prev->next = NULL; 
-
-    tmp->next = *b;
-    *b = tmp;
-}
-
-
-void swap(t_list *a){
-    t_list *tmp  = a; 
-    if(!a || !(a->next))
-        return ; 
-    while((tmp->next)->next){
-        tmp=tmp->next; 
-    }
-    swap_int(&(tmp->data),&((tmp->next)->data)); 
+	if (!lst || !(*lst) || !(*lst)->next)
+		return ;
+	second_last = *lst;
+	while (second_last->next->next)
+		second_last = second_last->next;
+	last = second_last->next;
+	second_last->next = NULL;
+	last->next = *lst;
+	*lst = last;
 }
