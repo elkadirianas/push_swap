@@ -40,6 +40,7 @@ void rb(t_list *b);
 void swap(t_list *a);
 void rotate(t_list *a); 
 void push(t_list **a , t_list **b); 
+void rev_rotate(t_list *a); 
 
 
 #endif
