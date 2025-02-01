@@ -11,14 +11,23 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+void f(){
+	system("leaks push_swap"); 
+}
 int	main(int argc, char **argv)
 {
+	atexit(f); 
 	t_list	*stack_a;
+	t_list *stack_b ; 
 
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc > 1)
 		parse(&stack_a, argc, argv);
 	print_list(stack_a, "stack_a");
+	// print_list(stack_b, "stack_b");
+	// // ra(&stack_a); 
+	// print_list(stack_a, "stack_a");
+	// print_list(stack_b, "stack_b");
 	return (0);
 }

@@ -18,3 +18,36 @@ void	swap_int(int *a, int *b)
 	*b = (*a) - (*b);
 	*a -= *b;
 }
+static int is_number(char c){
+	if((c>='0' && c<='9'))
+		return 1 ; 
+	return 0 ; 
+}
+
+int is_empty(char *str){
+	int i =0  ; 
+	if(ft_strlen(str)==0)
+		return 1 ; 
+	while(str[i]){
+		if(!((str[i]>=9 && str[i]<=13) || str[i]==32))
+			return 0 ; 
+		i++; 
+	}
+	return 1 ; 
+}
+
+int is_valid(char *str){
+	int i =0 ; 
+	if(str[0]=='+' || str[0]=='-')
+		i++; 
+	if(i==1){
+		if(!is_number(str[i]))
+			return 0 ; 
+	}
+	while(str[i]){
+		if(!is_number(str[i]))
+			return 0 ; 
+		i++; 
+	}
+	return 1 ; 
+}

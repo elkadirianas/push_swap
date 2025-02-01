@@ -63,6 +63,16 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
+void free_list(t_list **lst){
+	t_list *tmp ; 
+	tmp=*lst; 
+	while(tmp){
+		(tmp)=(tmp)->next; 
+		free(*lst); 
+		*lst = tmp ; 
+	}
+}
+
 void	print_list(t_list *lst, char *str)
 {
 	printf("List %s : \t ", str);
