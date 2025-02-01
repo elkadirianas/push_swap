@@ -39,6 +39,7 @@ int					ft_strlen(const char *s);
 void				swap_int(int *a, int *b);
 int is_valid(char *str); 
 int is_empty(char *str); 
+int is_dup(t_list *a,int num); 
 // moves
 
 void				sa(t_list *a);

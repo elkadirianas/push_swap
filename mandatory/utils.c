@@ -35,6 +35,15 @@ int is_empty(char *str){
 	}
 	return 1 ; 
 }
+int is_dup(t_list *a,int num){
+	t_list *tmp =a; 
+	while(tmp){
+		if(tmp->data==num)
+			return 1 ; 
+		tmp=tmp->next; 
+	}
+	return 0 ; 
+}
 
 int is_valid(char *str){
 	int i =0 ; 

@@ -45,8 +45,15 @@ void	parse(t_list **a, int argc, char **argv)
 			free_list(a);
 			return;
 		}
-		else
+		else{
+			if(is_dup(*a,ft_atol(splitted_arg[i]))){
+				printf("error"); 
+				free_splitted(splitted_arg, argc);
+				free_list(a);
+				return;
+			}
 			ft_lstadd_back(a, ft_atol(splitted_arg[i]));
+		}
 		i++;
 	}
 	free_splitted(splitted_arg, argc); 
