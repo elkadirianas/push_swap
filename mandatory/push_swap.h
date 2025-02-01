@@ -65,4 +65,7 @@ char				**ft_split(char const *s, char c);
 char				**free_splitted(char **splitted);
 char				*ft_strjoin(char const *s1, char const *s2);
 
+// sort 
+void move_to_b(t_list *a , t_list *b); 
+
 #endif
