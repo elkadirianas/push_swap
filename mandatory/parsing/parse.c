@@ -22,40 +22,41 @@ void	parse(t_list **a, int argc, char **argv)
 	joined_args = NULL;
 	while (i < argc)
 	{
-		temp = joined_args; 
-		if(is_empty(argv[i])){
-			printf("error\n"); 
-			free(temp); 
-			return ; 
+		temp = joined_args;
+		if (is_empty(argv[i]))
+		{
+			printf("error\n");
+			free(temp);
+			return ;
 		}
-		joined_args = ft_strjoin(joined_args, argv[i]); 
-		free(temp);  
+		joined_args = ft_strjoin(joined_args, argv[i]);
+		free(temp);
 		i++;
 	}
 	splitted_arg = ft_split(joined_args, ' ');
-	free(joined_args); 
-
+	free(joined_args);
 	i = 0;
 	while (splitted_arg[i])
 	{
 		if (!is_valid(splitted_arg[i]))
 		{
-			printf("error"); 
+			printf("error");
 			free_splitted(splitted_arg);
 			free_list(a);
-			return;
+			return ;
 		}
-		else{
-			if(is_dup(*a,ft_atol(splitted_arg[i]))){
-				printf("error"); 
+		else
+		{
+			if (is_dup(*a, ft_atol(splitted_arg[i])))
+			{
+				printf("error");
 				free_splitted(splitted_arg);
 				free_list(a);
-				return;
+				return ;
 			}
 			ft_lstadd_back(a, ft_atol(splitted_arg[i]));
 		}
 		i++;
 	}
-	free_splitted(splitted_arg); 
+	free_splitted(splitted_arg);
 }
-

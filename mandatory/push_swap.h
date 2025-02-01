@@ -20,7 +20,7 @@
 typedef struct s_list
 {
 	int				data;
-	int 			index; 
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -31,16 +31,16 @@ void				ft_lstadd_front(t_list **lst, int data);
 void				print_list(t_list *lst, char *str);
 void				ft_lstadd_back(t_list **lst, int data);
 t_list				*ft_lstlast(t_list *lst);
-void free_list(t_list **lst); 
+void				free_list(t_list **lst);
 // string utils
 
-long					ft_atol(const char *nbr);
+long				ft_atol(const char *nbr);
 int					ft_strlen(const char *s);
 // utils
 void				swap_int(int *a, int *b);
-int is_valid(char *str); 
-int is_empty(char *str); 
-int is_dup(t_list *a,int num); 
+int					is_valid(char *str);
+int					is_empty(char *str);
+int					is_dup(t_list *a, int num);
 // moves
 
 void				sa(t_list *a);
@@ -62,7 +62,7 @@ void				rotate(t_list **lst);
 // parsing
 void				parse(t_list **a, int argc, char **argv);
 char				**ft_split(char const *s, char c);
-char	**free_splitted(char **splitted); 
+char				**free_splitted(char **splitted);
 char				*ft_strjoin(char const *s1, char const *s2);
 
 #endif

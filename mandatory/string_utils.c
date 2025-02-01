@@ -32,7 +32,7 @@ int	ft_strlen(const char *s)
 
 long	ft_atol(const char *nbr)
 {
-	int			sign;
+	int					sign;
 	unsigned long long	res;
 
 	sign = 1;

@@ -47,9 +47,11 @@ static char	*copy(char const *start, char const *end)
 
 char	**free_splitted(char **splitted)
 {
-	int i =0 ; 
-	while(splitted[i])
-		i++; 
+	int	i;
+
+	i = 0;
+	while (splitted[i])
+		i++;
 	while (i > 0)
 		free(splitted[--i]);
 	free(splitted);
