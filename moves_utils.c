@@ -13,13 +13,13 @@
 
 #include "push_swap.h"
 
-void	swap(t_list *lst)
+void	swap(t_list **lst)
 {
 	int	temp;
 
 	if (!lst || !lst->next)
 		return ;
-    swap_int(&(lst->data),&(lst->next->data)); 
+    swap_int(&(lst->data),&(lst->next->data));
 }
 
 void	push(t_list **a, t_list **b)
@@ -36,30 +36,30 @@ void	push(t_list **a, t_list **b)
 
 void	rotate(t_list **lst)
 {
-	t_list	*node;
+	t_list	*tmp;
 	t_list	*last;
 
 	if (!lst || !(*lst) || !(*lst)->next)
 		return ;
 	last = ft_lstlast(*lst);
-	node = (*lst)->next;
+	tmp = (*lst)->next;
 	(*lst)->next = NULL;
 	last->next = *lst;
-	*lst = node;
+	*lst = tmp;
 }
 
 void	rev_rotate(t_list **lst)
 {
 	t_list	*last;
-	t_list	*second_last;
+	t_list	*prev;
 
 	if (!lst || !(*lst) || !(*lst)->next)
 		return ;
-	second_last = *lst;
-	while (second_last->next->next)
-		second_last = second_last->next;
-	last = second_last->next;
-	second_last->next = NULL;
+	prev = *lst;
+	while (prev->next->next)
+		prev = prev->next;
+	last = prev->next;
+	prev->next = NULL;
 	last->next = *lst;
 	*lst = last;
 }
