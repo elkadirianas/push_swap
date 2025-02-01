@@ -33,7 +33,7 @@ t_list				*ft_lstlast(t_list *lst);
 // string utils
 
 int					ft_atoi(const char *nbr);
-
+int					ft_strlen(const char *s);
 // utils
 void				swap_int(int *a, int *b);
 // moves
@@ -53,5 +53,10 @@ void				swap(t_list *a);
 void				push(t_list **a, t_list **b);
 void				rev_rotate(t_list **lst);
 void				rotate(t_list **lst);
+
+// parsing
+void				parse(t_list **a, int argc, char **argv);
+char				**ft_split(char const *s, char c);
+char				*ft_strjoin(char const *s1, char const *s2);
 
 #endif

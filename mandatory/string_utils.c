@@ -20,6 +20,16 @@ static int	ft_isdigit(int c)
 	return (result);
 }
 
+int	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 int	ft_atoi(const char *nbr)
 {
 	int			sign;

@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkadir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 14:07:37 by aelkadir          #+#    #+#             */
-/*   Updated: 2025/02/01 14:07:39 by aelkadir         ###   ########.fr       */
+/*   Created: 2025/02/01 14:27:54 by aelkadir          #+#    #+#             */
+/*   Updated: 2025/02/01 14:27:55 by aelkadir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../push_swap.h"
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+void	parse(t_list **a, int argc, char **argv)
 {
-	t_list	*stack_a;
+	int		i;
+	char	*joined_args;
+	char	**splitted_arg;
 
-	stack_a = NULL;
-	if (argc > 1)
-		parse(&stack_a, argc, argv);
-	print_list(stack_a, "stack_a");
-	return (0);
+	i = 1;
+	joined_args = NULL;
+	while (i < argc)
+	{
+		joined_args = ft_strjoin(joined_args, argv[i]);
+		i++;
+	}
+	splitted_arg = ft_split(joined_args, ' ');
+	i = 0;
+	while (splitted_arg[i])
+	{
+		ft_lstadd_back(a, atoi(splitted_arg[i]));
+		i++;
+	}
 }
