@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int data)
 	if (!new)
 		return (NULL);
 	new->data = data;
+	new->index = 0 ; 
 	new->next = NULL;
 	return (new);
 }
@@ -49,9 +50,14 @@ void	ft_lstadd_back(t_list **lst, int data)
 		*lst = new;
 		return ;
 	}
-	while ((tmp) && (tmp)->next)
-		(tmp) = (tmp)->next;
-	(tmp)->next = new;
+	while (tmp && tmp->next){
+		if(tmp->data > new->data)
+			tmp->index++; 
+		else 
+			new->index++; 
+		tmp = tmp->next;
+	}
+	tmp->next = new;
 }
 
 t_list	*ft_lstlast(t_list *lst)

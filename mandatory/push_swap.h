@@ -20,6 +20,7 @@
 typedef struct s_list
 {
 	int				data;
+	int 			index; 
 	struct s_list	*next;
 }					t_list;
 
@@ -61,7 +62,7 @@ void				rotate(t_list **lst);
 // parsing
 void				parse(t_list **a, int argc, char **argv);
 char				**ft_split(char const *s, char c);
-char	**free_splitted(char **splitted, int i); 
+char	**free_splitted(char **splitted); 
 char				*ft_strjoin(char const *s1, char const *s2);
 
 #endif

@@ -29,5 +29,6 @@ int	main(int argc, char **argv)
 	// // ra(&stack_a); 
 	// print_list(stack_a, "stack_a");
 	// print_list(stack_b, "stack_b");
+	free_list(&stack_a); 
 	return (0);
 }

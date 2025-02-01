@@ -45,8 +45,11 @@ static char	*copy(char const *start, char const *end)
 	return (copy);
 }
 
-char	**free_splitted(char **splitted, int i)
+char	**free_splitted(char **splitted)
 {
+	int i =0 ; 
+	while(splitted[i])
+		i++; 
 	while (i > 0)
 		free(splitted[--i]);
 	free(splitted);
@@ -84,7 +87,7 @@ char	**ft_split(char const *s, char c)
 				s++;
 			splitted[i++] = copy(start, s);
 			if (!splitted[i - 1])
-				return (free_splitted(splitted, i));
+				return (free_splitted(splitted));
 		}
 	}
 	splitted[i] = NULL;
