@@ -26,11 +26,6 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc > 1)
 		parse(&stack_a, argc, argv);
-	print_list(stack_a, "stack_a");
-	// print_list(stack_b, "stack_b");
-	// // ra(&stack_a);
-	// print_list(stack_a, "stack_a");
-	// print_list(stack_b, "stack_b");
 	free_list(&stack_a);
 	return (0);
 }

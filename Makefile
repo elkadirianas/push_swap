@@ -7,7 +7,7 @@ RM = rm -f
 
 
 SRC = mandatory/list_utils.c    mandatory/main.c    mandatory/string_utils.c mandatory/utils.c  mandatory/moves/push_moves.c       mandatory/moves/rev_rotate_moves.c mandatory/moves/rotate_moves.c     mandatory/moves/swap_moves.c \
-		mandatory/parsing/join.c  mandatory/parsing/parse.c mandatory/parsing/split.c
+		mandatory/parsing/join.c  mandatory/parsing/parse.c mandatory/parsing/split.c  mandatory/sort/sort.c 
 
 
 
