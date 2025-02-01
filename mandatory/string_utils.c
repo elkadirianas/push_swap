@@ -30,10 +30,10 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_atoi(const char *nbr)
+long	ft_atol(const char *nbr)
 {
 	int			sign;
-	long long	res;
+	unsigned long long	res;
 
 	sign = 1;
 	res = 0;
@@ -47,14 +47,8 @@ int	ft_atoi(const char *nbr)
 	}
 	while (ft_isdigit(*nbr))
 	{
-		if (res > (LLONG_MAX - (*nbr - '0')) / 10)
-		{
-			if (sign == -1)
-				return (0);
-			return (-1);
-		}
 		res = res * 10 + (*nbr - '0');
 		nbr++;
 	}
-	return (res * sign);
+	return ((long)res * sign);
 }

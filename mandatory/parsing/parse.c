@@ -46,7 +46,7 @@ void	parse(t_list **a, int argc, char **argv)
 			return;
 		}
 		else
-			ft_lstadd_back(a, atoi(splitted_arg[i]));
+			ft_lstadd_back(a, ft_atol(splitted_arg[i]));
 		i++;
 	}
 	free_splitted(splitted_arg, argc); 

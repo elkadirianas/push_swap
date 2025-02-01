@@ -49,5 +49,7 @@ int is_valid(char *str){
 			return 0 ; 
 		i++; 
 	}
+	if(ft_atol(str)>INT_MAX || ft_atol(str)<INT_MIN)
+		return 0 ; 
 	return 1 ; 
 }

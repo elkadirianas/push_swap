@@ -33,7 +33,7 @@ t_list				*ft_lstlast(t_list *lst);
 void free_list(t_list **lst); 
 // string utils
 
-int					ft_atoi(const char *nbr);
+long					ft_atol(const char *nbr);
 int					ft_strlen(const char *s);
 // utils
 void				swap_int(int *a, int *b);
