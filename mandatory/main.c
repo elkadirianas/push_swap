@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc > 1)
 		parse(&stack_a, argc, argv);
+	print_list(stack_a,"stack_a"); 
 	free_list(&stack_a);
 	return (0);
 }

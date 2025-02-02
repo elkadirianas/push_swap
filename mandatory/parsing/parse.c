@@ -11,49 +11,58 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-void	parse(t_list **a, int argc, char **argv)
+static void	ft_error(char **splitted_arg, t_list **a)
 {
-	int		i;
-	char	*joined_args;
+	printf("error\n");
+	free_splitted(splitted_arg);
+	free_list(a);
+	exit(1);
+}
+
+static void	ft_error1(char *tmp)
+{
+	printf("error\n");
+	free(tmp);
+	exit(1);
+}
+
+static char	*join_args(int argc, char **argv)
+{
 	char	*temp;
-	char	**splitted_arg;
+	char	*joined_args;
+	int		i;
 
 	i = 1;
-	joined_args = NULL;
 	while (i < argc)
 	{
 		temp = joined_args;
 		if (is_empty(argv[i]))
-		{
-			printf("error\n");
-			free(temp);
-			return ;
-		}
+			ft_error1(temp);
 		joined_args = ft_strjoin(joined_args, argv[i]);
 		free(temp);
 		i++;
 	}
+	return (joined_args);
+}
+
+void	parse(t_list **a, int argc, char **argv)
+{
+	int		i;
+	char	*joined_args;
+	char	**splitted_arg;
+
+	joined_args = join_args(argc, argv);
 	splitted_arg = ft_split(joined_args, ' ');
 	free(joined_args);
 	i = 0;
 	while (splitted_arg[i])
 	{
 		if (!is_valid(splitted_arg[i]))
-		{
-			printf("error");
-			free_splitted(splitted_arg);
-			free_list(a);
-			return ;
-		}
+			ft_error(splitted_arg, a);
 		else
 		{
 			if (is_dup(*a, ft_atol(splitted_arg[i])))
-			{
-				printf("error");
-				free_splitted(splitted_arg);
-				free_list(a);
-				return ;
-			}
+				ft_error(splitted_arg, a);
 			ft_lstadd_back(a, ft_atol(splitted_arg[i]));
 		}
 		i++;
