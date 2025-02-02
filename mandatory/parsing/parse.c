@@ -13,7 +13,7 @@
 
 static void	ft_error(char **splitted_arg, t_list **a)
 {
-	printf("error\n");
+	write(2, "Error\n", 6);
 	free_splitted(splitted_arg);
 	free_list(a);
 	exit(1);
@@ -21,7 +21,7 @@ static void	ft_error(char **splitted_arg, t_list **a)
 
 static void	ft_error1(char *tmp)
 {
-	printf("error\n");
+	write(2, "Error\n", 6);
 	free(tmp);
 	exit(1);
 }
