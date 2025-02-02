@@ -26,8 +26,10 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc > 1)
+	{
 		parse(&stack_a, argc, argv);
-	sort(&stack_a, &stack_b);
-	free_list(&stack_a);
+		sort(&stack_a, &stack_b);
+		free_list(&stack_a);
+	}
 	return (0);
 }
