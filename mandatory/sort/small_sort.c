@@ -12,6 +12,12 @@
 
 #include "../push_swap.h"
 
+void	sort_2(t_list **stack_a)
+{
+	if ((*stack_a)->data > (*stack_a)->next->data)
+		sa(*stack_a);
+}
+
 void	sort_3(t_list **stack_a)
 {
 	if (max_position(stack_a) == 0)

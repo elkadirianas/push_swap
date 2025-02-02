@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 		parse(&stack_a, argc, argv);
 	print_list(stack_a, "stack_a");
-	sort_5(&stack_a, &stack_b);
+	sort_2(&stack_a);
 	print_list(stack_a, "stack_a");
 	free_list(&stack_a);
 	return (0);
