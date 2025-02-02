@@ -12,6 +12,25 @@
 
 #include "../push_swap.h"
 
+int decide(t_list **stack_a){
+	int count ; 
+	t_list *tmp ;
+	int	size;
+
+	size = ft_lstsize(*stack_a);
+	count =0 ;  
+	tmp = *stack_a ; 
+
+	while(tmp->next){
+		if(tmp->index - tmp->next->index <= 4 )
+			count++; 
+		tmp=tmp->next ; 
+	}
+	if(count * 10 >=6 *size)
+		return 0 ; 
+	return 1 ; 
+}
+
 void	sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;

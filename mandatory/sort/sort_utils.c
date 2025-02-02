@@ -65,8 +65,10 @@ void	move_to_b(t_list **a, t_list **b)
 	int	i;
 	int	size;
 	int chunk_size ; 
+	int decision ; 
 
 	i = 0;
+	decision = decide(a); 
 	size = ft_lstsize(*a);
 	chunk_size = (size >=100)*32+(size <100)*16; 
 	while (i < size)
@@ -82,8 +84,12 @@ void	move_to_b(t_list **a, t_list **b)
 			pb(a, b);
 			rb(b);
 		}
-		else
-			ra(a);
+		else{
+			if(decision)
+				ra(a);
+			else 
+				rra(a) ; 
+		}
 	}
 }
 
