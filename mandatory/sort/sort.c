@@ -17,8 +17,8 @@ void	sort(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	size = ft_lstsize(*stack_a);
-	print_list(*stack_a, "stack_a");
-	print_list(*stack_b, "stack_b");
+	// print_list(*stack_a, "stack_a");
+	// print_list(*stack_b, "stack_b");
 	if (size == 1 || is_sorted(*stack_a))
 		return ;
 	else if (size == 2)
@@ -34,6 +34,6 @@ void	sort(t_list **stack_a, t_list **stack_b)
 		move_to_b(stack_a, stack_b);
 		move_to_a(stack_a, stack_b);
 	}
-	print_list(*stack_a, "stack_a");
-	print_list(*stack_b, "stack_b");
+	// print_list(*stack_a, "stack_a");
+	// print_list(*stack_b, "stack_b");
 }

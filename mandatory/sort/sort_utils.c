@@ -64,9 +64,11 @@ void	move_to_b(t_list **a, t_list **b)
 {
 	int	i;
 	int	size;
+	int chunk_size ; 
 
 	i = 0;
 	size = ft_lstsize(*a);
+	chunk_size = (size >=100)*32+(size <100)*16; 
 	while (i < size)
 	{
 		if ((*a)->index <= i)
@@ -74,7 +76,7 @@ void	move_to_b(t_list **a, t_list **b)
 			i++;
 			pb(a, b);
 		}
-		else if ((*a)->index <= i + 16)
+		else if ((*a)->index <= i + chunk_size)
 		{
 			i++;
 			pb(a, b);
