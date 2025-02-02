@@ -12,14 +12,35 @@
 
 #include "../push_swap.h"
 
-static int	max_position(t_list **b)
+int	max_position(t_list **b)
+{
+	t_list	*tmp;
+	int i =0 ; 
+	int max_temp ; 
+	int		pos;
+
+	pos = i;
+	max_temp=(*b)->data ; 
+	tmp = *b;
+	while (i < ft_lstsize(*b) - 1  )
+	{
+		tmp=tmp->next ; 
+		i++; 
+		if(tmp->data>max_temp){	
+			max_temp=tmp->data ; 
+			pos=i; 
+		}
+	}
+	return (pos);
+}
+int	min_position(t_list **b)
 {
 	t_list	*tmp;
 	int		pos;
 
 	pos = 0;
 	tmp = *b;
-	while (tmp->index != ft_lstsize(*b) - 1)
+	while (tmp->index != 0)
 	{
 		pos++;
 		tmp = tmp->next;
