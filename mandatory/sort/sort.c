@@ -36,14 +36,21 @@ int	max_position(t_list **b)
 int	min_position(t_list **b)
 {
 	t_list	*tmp;
+	int i =0 ; 
+	int min_temp ; 
 	int		pos;
 
-	pos = 0;
+	pos = i;
+	min_temp=(*b)->data ; 
 	tmp = *b;
-	while (tmp->index != 0)
+	while (i < ft_lstsize(*b) - 1  )
 	{
-		pos++;
-		tmp = tmp->next;
+		tmp=tmp->next ; 
+		i++; 
+		if(tmp->data<min_temp){	
+			min_temp=tmp->data ; 
+			pos=i; 
+		}
 	}
 	return (pos);
 }

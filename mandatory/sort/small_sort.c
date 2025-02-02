@@ -31,8 +31,23 @@ void sort_4(t_list **stack_a,t_list **stack_b){
     else if(min_position(stack_a)==3)
         rra(stack_a); 
     pb(stack_a,stack_b); 
-    print_list(*stack_a,"stack_a after"); 
     sort_3(stack_a); 
-     print_list(*stack_a,"stack_a after sorting "); 
+    pa(stack_a, stack_b); 
+}
+
+void sort_5(t_list **stack_a,t_list **stack_b){
+    if(min_position(stack_a)==1)
+        ra(stack_a);
+    else if(min_position(stack_a)==2){
+        rra(stack_a); 
+        rra(stack_a); 
+        rra(stack_a); 
+    }
+    else if(min_position(stack_a)==3){
+        rra(stack_a); 
+        rra(stack_a); 
+    }
+    pb(stack_a,stack_b); 
+    sort_4(stack_a,stack_b); 
     pa(stack_a, stack_b); 
 }
