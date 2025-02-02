@@ -15,41 +15,46 @@
 int	max_position(t_list **b)
 {
 	t_list	*tmp;
-	int i =0 ; 
-	int max_temp ; 
+	int		i;
+	int		max_temp;
 	int		pos;
 
+	i = 0;
 	pos = i;
-	max_temp=(*b)->data ; 
+	max_temp = (*b)->data;
 	tmp = *b;
-	while (i < ft_lstsize(*b) - 1  )
+	while (i < ft_lstsize(*b) - 1)
 	{
-		tmp=tmp->next ; 
-		i++; 
-		if(tmp->data>max_temp){	
-			max_temp=tmp->data ; 
-			pos=i; 
+		tmp = tmp->next;
+		i++;
+		if (tmp->data > max_temp)
+		{
+			max_temp = tmp->data;
+			pos = i;
 		}
 	}
 	return (pos);
 }
+
 int	min_position(t_list **b)
 {
 	t_list	*tmp;
-	int i =0 ; 
-	int min_temp ; 
+	int		i;
+	int		min_temp;
 	int		pos;
 
+	i = 0;
 	pos = i;
-	min_temp=(*b)->data ; 
+	min_temp = (*b)->data;
 	tmp = *b;
-	while (i < ft_lstsize(*b) - 1  )
+	while (i < ft_lstsize(*b) - 1)
 	{
-		tmp=tmp->next ; 
-		i++; 
-		if(tmp->data<min_temp){	
-			min_temp=tmp->data ; 
-			pos=i; 
+		tmp = tmp->next;
+		i++;
+		if (tmp->data < min_temp)
+		{
+			min_temp = tmp->data;
+			pos = i;
 		}
 	}
 	return (pos);

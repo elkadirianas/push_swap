@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap_int(int *a, int *b)
 {
@@ -58,7 +58,8 @@ int	is_dup(t_list *a, int num)
 
 int	is_valid(char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	if (str[0] == '+' || str[0] == '-')
 		i++;
