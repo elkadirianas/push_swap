@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	atexit(f);
+	// atexit(f);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc > 1)

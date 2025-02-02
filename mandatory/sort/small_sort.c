@@ -46,18 +46,20 @@ void	sort_4(t_list **stack_a, t_list **stack_b)
 
 void	sort_5(t_list **stack_a, t_list **stack_b)
 {
-	if (min_position(stack_a) == 1)
+	int	i;
+	int	min_pos;
+
+	min_pos = min_position(stack_a);
+	if (min_pos == 1)
 		ra(stack_a);
-	else if (min_position(stack_a) == 2)
+	else if (min_pos > 1)
 	{
-		rra(stack_a);
-		rra(stack_a);
-		rra(stack_a);
-	}
-	else if (min_position(stack_a) == 3)
-	{
-		rra(stack_a);
-		rra(stack_a);
+		i = 5;
+		while (i > min_pos)
+		{
+			rra(stack_a);
+			i--;
+		}
 	}
 	pb(stack_a, stack_b);
 	sort_4(stack_a, stack_b);
