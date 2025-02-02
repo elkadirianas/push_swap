@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "limits.h"
-# include "stdio.h"
 # include "stdlib.h"
 # include "unistd.h"
 
@@ -29,7 +28,6 @@ typedef struct s_list
 
 t_list				*ft_lstnew(int data);
 int					ft_lstsize(t_list *lst);
-void				print_list(t_list *lst, char *str);
 void				ft_lstadd_back(t_list **lst, int data);
 t_list				*ft_lstlast(t_list *lst);
 void				free_list(t_list **lst);

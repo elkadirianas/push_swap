@@ -55,14 +55,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
-void	print_list(t_list *lst, char *str)
-{
-	printf("List %s : \t ", str);
-	while (lst)
-	{
-		printf("[ data : %d , index  : %d] --> ", lst->data, lst->index);
-		lst = lst->next;
-	}
-	printf("NULL\n");
-}
