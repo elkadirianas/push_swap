@@ -30,11 +30,11 @@ void	ra(t_list **a)
 
 {
 	rotate(a);
-	printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_list **b)
 {
 	rotate(b);
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }

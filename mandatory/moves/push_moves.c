@@ -27,11 +27,11 @@ void	push(t_list **a, t_list **b)
 void	pa(t_list **a, t_list **b)
 {
 	push(a, b);
-	printf("pa\n");
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_list **a, t_list **b)
 {
 	push(b, a);
-	printf("pb\n");
+	write(1, "pb\n", 3);
 }
