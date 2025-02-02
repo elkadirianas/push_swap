@@ -60,7 +60,7 @@ int	min_position(t_list **b)
 	return (pos);
 }
 
-void	move_to_b(t_list **a, t_list **b)
+void	move_to_b(t_list **a, t_list **b, int d)
 {
 	int	i;
 	int	size;
@@ -80,7 +80,7 @@ void	move_to_b(t_list **a, t_list **b)
 			pb(a, b);
 			rb(b);
 		}
-		else if (decide(a))
+		else if (d)
 			ra(a);
 		else
 			rra(a);

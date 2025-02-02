@@ -69,7 +69,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 // sort
 int					max_position(t_list **b);
 int					min_position(t_list **b);
-void				move_to_b(t_list **a, t_list **b);
+void				move_to_b(t_list **a, t_list **b, int d);
 void				move_to_a(t_list **a, t_list **b);
 void				sort_2(t_list **stack_a);
 void				sort_3(t_list **stack_a);

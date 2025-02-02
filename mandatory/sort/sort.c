@@ -35,7 +35,9 @@ int	decide(t_list **stack_a)
 void	sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
+	int	d;
 
+	d = decide(stack_a);
 	size = ft_lstsize(*stack_a);
 	if (size == 1 || is_sorted(*stack_a))
 		return ;
@@ -49,7 +51,7 @@ void	sort(t_list **stack_a, t_list **stack_b)
 		sort_5(stack_a, stack_b);
 	else
 	{
-		move_to_b(stack_a, stack_b);
+		move_to_b(stack_a, stack_b, d);
 		move_to_a(stack_a, stack_b);
 	}
 }
