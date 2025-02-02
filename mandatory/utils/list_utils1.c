@@ -46,3 +46,14 @@ void	free_list(t_list **lst)
 		*lst = tmp;
 	}
 }
+
+int	is_sorted(t_list *lst)
+{
+	while (lst && lst->next)
+	{
+		if (lst->data > lst->next->data)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}

@@ -32,6 +32,7 @@ void				print_list(t_list *lst, char *str);
 void				ft_lstadd_back(t_list **lst, int data);
 t_list				*ft_lstlast(t_list *lst);
 void				free_list(t_list **lst);
+int					is_sorted(t_list *lst);
 // string utils
 
 long				ft_atol(const char *nbr);

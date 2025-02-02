@@ -19,7 +19,7 @@ void	sort(t_list **stack_a, t_list **stack_b)
 	size = ft_lstsize(*stack_a);
 	print_list(*stack_a, "stack_a");
 	print_list(*stack_b, "stack_b");
-	if (size == 1)
+	if (size == 1 || is_sorted(*stack_a))
 		return ;
 	else if (size == 2)
 		sort_2(stack_a);
