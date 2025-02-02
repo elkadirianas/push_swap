@@ -74,5 +74,6 @@ void				sort_2(t_list **stack_a);
 void				sort_3(t_list **stack_a);
 void				sort_4(t_list **stack_a, t_list **stack_b);
 void				sort_5(t_list **stack_a, t_list **stack_b);
+void				sort(t_list **stack_a, t_list **stack_b);
 
 #endif

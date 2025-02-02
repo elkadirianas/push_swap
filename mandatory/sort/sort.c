@@ -5,101 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkadir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 23:00:00 by aelkadir          #+#    #+#             */
-/*   Updated: 2025/02/01 23:00:02 by aelkadir         ###   ########.fr       */
+/*   Created: 2025/02/02 16:22:21 by aelkadir          #+#    #+#             */
+/*   Updated: 2025/02/02 16:22:23 by aelkadir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	max_position(t_list **b)
+void	sort(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*tmp;
-	int		i;
-	int		max_temp;
-	int		pos;
-
-	i = 0;
-	pos = i;
-	max_temp = (*b)->data;
-	tmp = *b;
-	while (i < ft_lstsize(*b) - 1)
-	{
-		tmp = tmp->next;
-		i++;
-		if (tmp->data > max_temp)
-		{
-			max_temp = tmp->data;
-			pos = i;
-		}
-	}
-	return (pos);
-}
-
-int	min_position(t_list **b)
-{
-	t_list	*tmp;
-	int		i;
-	int		min_temp;
-	int		pos;
-
-	i = 0;
-	pos = i;
-	min_temp = (*b)->data;
-	tmp = *b;
-	while (i < ft_lstsize(*b) - 1)
-	{
-		tmp = tmp->next;
-		i++;
-		if (tmp->data < min_temp)
-		{
-			min_temp = tmp->data;
-			pos = i;
-		}
-	}
-	return (pos);
-}
-
-void	move_to_b(t_list **a, t_list **b)
-{
-	int	i;
 	int	size;
 
-	i = 0;
-	size = ft_lstsize(*a);
-	while (i < size)
+	size = ft_lstsize(*stack_a);
+	print_list(*stack_a, "stack_a");
+	print_list(*stack_b, "stack_b");
+	if (size == 1)
+		return ;
+	else if (size == 2)
+		sort_2(stack_a);
+	else if (size == 3)
+		sort_3(stack_a);
+	else if (size == 4)
+		sort_4(stack_a, stack_b);
+	else if (size == 5)
+		sort_5(stack_a, stack_b);
+	else
 	{
-		if ((*a)->index <= i)
-		{
-			i++;
-			pb(a, b);
-		}
-		else if ((*a)->index <= i + 16)
-		{
-			i++;
-			pb(a, b);
-			rb(b);
-		}
-		else
-			ra(a);
+		move_to_b(stack_a, stack_b);
+		move_to_a(stack_a, stack_b);
 	}
-}
-
-void	move_to_a(t_list **a, t_list **b)
-{
-	int	pos;
-	int	size;
-
-	size = ft_lstsize(*b);
-	while (size--)
-	{
-		pos = max_position(b);
-		if (pos <= ft_lstsize(*b) / 2)
-			while (pos-- > 0)
-				rb(b);
-		else
-			while (pos++ < ft_lstsize(*b))
-				rrb(b);
-		pa(a, b);
-	}
+	print_list(*stack_a, "stack_a");
+	print_list(*stack_b, "stack_b");
 }
