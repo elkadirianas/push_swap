@@ -27,7 +27,7 @@ typedef struct s_list
 // linked_list_utils
 
 t_list				*ft_lstnew(int data);
-int	ft_lstsize(t_list *lst); 
+int					ft_lstsize(t_list *lst);
 void				print_list(t_list *lst, char *str);
 void				ft_lstadd_back(t_list **lst, int data);
 t_list				*ft_lstlast(t_list *lst);
@@ -65,8 +65,8 @@ char				**ft_split(char const *s, char c);
 char				**free_splitted(char **splitted);
 char				*ft_strjoin(char const *s1, char const *s2);
 
-// sort 
-void move_to_b(t_list **a , t_list **b); 
-void move_to_a(t_list **a , t_list **b); 
+// sort
+void				move_to_b(t_list **a, t_list **b);
+void				move_to_a(t_list **a, t_list **b);
 
 #endif

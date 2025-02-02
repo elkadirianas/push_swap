@@ -58,7 +58,7 @@ int	is_dup(t_list *a, int num)
 
 int	is_valid(char *str)
 {
-	int		i;
+	int i;
 	i = 0;
 	if (str[0] == '+' || str[0] == '-')
 		i++;

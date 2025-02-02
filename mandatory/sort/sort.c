@@ -12,52 +12,61 @@
 
 #include "../push_swap.h"
 
-void move_to_b(t_list **a , t_list **b){
-    int i =0 ;
-    int size = ft_lstsize(*a); 
-    while(i<size){
-        if((*a)->index<=i){
-            i++; 
-            pb(a,b); 
-        }
-        else if((*a)->index<=i+16){
-            i++; 
-            pb(a,b); 
-            rb(b); 
-        }
-        else{
-            ra(a); 
-        }
-    }
+static int	max_position(t_list **b)
+{
+	t_list	*tmp;
+	int		pos;
+
+	pos = 0;
+	tmp = *b;
+	while (tmp->index != ft_lstsize(*b) - 1)
+	{
+		pos++;
+		tmp = tmp->next;
+	}
+	return (pos);
 }
 
-void move_to_a(t_list **a , t_list **b){
-    int i =0 ; 
-    int pos ; 
-    t_list *tmp ; 
-    int size_before = ft_lstsize(*b); 
-    while(i<size_before){
-        pos =0 ;
-        tmp = *b; 
-        while(tmp->index!=ft_lstsize(*b)-1){
-            pos++; 
-            tmp=tmp->next ; 
-        }
-        if(pos<=(ft_lstsize(*b))/2){
-            while (pos>0)
-            {
-                pos--; 
-                rb(b); 
-            } 
-        }
-        else{
-            while (pos<ft_lstsize(*b))
-            {
-                pos++; 
-                rrb(b); 
-            } 
-        }
-        pa(a,b);
-        i++; 
-    }
+void	move_to_b(t_list **a, t_list **b)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = ft_lstsize(*a);
+	while (i < size)
+	{
+		if ((*a)->index <= i)
+		{
+			i++;
+			pb(a, b);
+		}
+		else if ((*a)->index <= i + 16)
+		{
+			i++;
+			pb(a, b);
+			rb(b);
+		}
+		else
+			ra(a);
+	}
+}
+
+void	move_to_a(t_list **a, t_list **b)
+{
+	int	pos;
+	int	size;
+
+	size = ft_lstsize(*b);
+	while (size--)
+	{
+		pos = max_position(b);
+		if (pos <= ft_lstsize(*b) / 2)
+			while (pos-- > 0)
+				rb(b);
+		else
+			while (pos++ < ft_lstsize(*b))
+				rrb(b);
+		pa(a, b);
+	}
 }

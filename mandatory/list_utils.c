@@ -25,11 +25,12 @@ t_list	*ft_lstnew(int data)
 	return (new);
 }
 
-static void  index(t_list *a, t_list *b){
-		if (a->data > b->data)
-			a->index++;
-		else
-			b->index++;
+static void	index(t_list *a, t_list *b)
+{
+	if (a->data > b->data)
+		a->index++;
+	else
+		b->index++;
 }
 
 void	ft_lstadd_back(t_list **lst, int data)
@@ -48,10 +49,10 @@ void	ft_lstadd_back(t_list **lst, int data)
 	}
 	while (tmp && tmp->next)
 	{
-		index(tmp,new); 
+		index(tmp, new);
 		tmp = tmp->next;
 	}
-	index(tmp,new); 
+	index(tmp, new);
 	tmp->next = new;
 }
 
@@ -95,7 +96,7 @@ void	print_list(t_list *lst, char *str)
 	printf("List %s : \t ", str);
 	while (lst)
 	{
-		printf("[ data : %d , index  : %d] --> ", lst->data,lst->index);
+		printf("[ data : %d , index  : %d] --> ", lst->data, lst->index);
 		lst = lst->next;
 	}
 	printf("NULL\n");
