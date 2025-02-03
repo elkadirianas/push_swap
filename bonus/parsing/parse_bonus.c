@@ -33,14 +33,22 @@ static char	*join_args(int argc, char **argv)
 	char	*joined_args;
 	int		i;
 
+	joined_args = ft_strdup("");
+	if (!joined_args)
+		return (NULL);
 	i = 1;
 	while (i < argc)
 	{
-		temp = joined_args;
 		if (is_empty(argv[i]))
-			ft_error1(temp);
+		{
+			free(joined_args);
+			ft_error1(NULL);
+		}
+		temp = joined_args;
 		joined_args = ft_strjoinn(joined_args, argv[i]);
 		free(temp);
+		if (!joined_args)
+			return (NULL);
 		i++;
 	}
 	return (joined_args);
