@@ -9,7 +9,7 @@ RM = rm -f
 SRC = mandatory/utils/list_utils.c  mandatory/utils/list_utils1.c  mandatory/main.c    mandatory/utils/string_utils.c mandatory/utils/utils.c  mandatory/moves/push_moves.c       mandatory/moves/rev_rotate_moves.c mandatory/moves/rotate_moves.c     mandatory/moves/swap_moves.c \
 		mandatory/parsing/join.c  mandatory/parsing/parse.c mandatory/parsing/split.c  mandatory/sort/sort_utils.c mandatory/sort/small_sort.c mandatory/sort/sort.c
 SRCB= bonus/checker_bonus.c bonus/gnl/get_next_line_bonus.c       bonus/gnl/get_next_line_utils_bonus.c bonus/parsing/join_bonus.c  bonus/parsing/parse_bonus.c bonus/parsing/split_bonus.c bonus/utils/list_utils1_bonus.c  \
-		bonus/utils/list_utils_bonus.c   bonus/utils/string_utils_bonus.c bonus/utils/utils_bonus.c bonus/moves/moves_bonus.c bonus/moves/sort_bonus.c 
+		bonus/utils/list_utils_bonus.c   bonus/utils/string_utils_bonus.c bonus/utils/utils_bonus.c bonus/moves/moves_bonus.c bonus/moves/sort_bonus.c bonus/moves/d_move.c 
 
 
 OBJ = $(SRC:.c=.o)
