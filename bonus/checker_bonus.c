@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		parse(&stack_a, argc, argv);
-		str = get_next_line(1);
+		str = get_next_line(0);
 		while (str)
 		{
 			tmp = str;
@@ -35,9 +35,13 @@ int	main(int argc, char **argv)
 				exit(0);
 			}
 			excute_move(&stack_a, &stack_b, str);
-			str = get_next_line(1);
+			str = get_next_line(0);
 			free(tmp);
 		}
+		if(is_sorted(stack_a) && !stack_b)
+			write(1,"OK\n",2); 
+		else
+			write(1,"ERROR\n",6); 
 		free_list(&stack_a);
 	}
 	return (0);
