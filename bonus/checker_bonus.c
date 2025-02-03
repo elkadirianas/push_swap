@@ -12,27 +12,29 @@
 
 #include "checker_bonus.h"
 
-static void checker(t_list **stack_a,t_list **stack_b){
+static void	checker(t_list **stack_a, t_list **stack_b)
+{
 	char	*str;
 	char	*tmp;
+
 	str = get_next_line(0);
-		while (str)
+	while (str)
+	{
+		tmp = str;
+		if (!is_valid_move(str))
 		{
-			tmp = str;
-			if (!is_valid_move(str))
-			{
-				free_list(stack_a);
-				write(2, "Error\n", 6);
-				exit(0);
-			}
-			excute_move(stack_a, stack_b, str);
-			str = get_next_line(0);
-			free(tmp);
+			free_list(stack_a);
+			write(2, "Error\n", 6);
+			exit(0);
 		}
-		if (is_sorted(*stack_a) && !(*stack_b))
-			write(1, "OK\n", 2);
-		else
-			write(1, "ERROR\n", 6);
+		excute_move(stack_a, stack_b, str);
+		str = get_next_line(0);
+		free(tmp);
+	}
+	if (is_sorted(*stack_a) && !(*stack_b))
+		write(1, "OK\n", 2);
+	else
+		write(1, "ERROR\n", 6);
 }
 
 int	main(int argc, char **argv)
@@ -45,7 +47,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		parse(&stack_a, argc, argv);
-		checker(&stack_a,&stack_b); 
+		checker(&stack_a, &stack_b);
 		free_list(&stack_a);
 	}
 	return (0);

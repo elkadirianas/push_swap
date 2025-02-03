@@ -36,11 +36,11 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 int	is_valid_move(char *str)
 {
-	if ((ft_strcmp(str, "pa\n") || ft_strcmp(str, "pb\n") || ft_strcmp(str, "sa\n")
-			|| ft_strcmp(str, "sb\n") || ft_strcmp(str, "ss\n") || ft_strcmp(str,
-				"ra\n") || ft_strcmp(str, "rb\n") || ft_strcmp(str, "rr\n")
-			|| ft_strcmp(str, "rra\n") || ft_strcmp(str, "rrb\n")
-			|| ft_strcmp(str, "rra\n")))
+	if ((ft_strcmp(str, "pa\n") || ft_strcmp(str, "pb\n") || ft_strcmp(str,
+				"sa\n") || ft_strcmp(str, "sb\n") || ft_strcmp(str, "ss\n")
+			|| ft_strcmp(str, "ra\n") || ft_strcmp(str, "rb\n")
+			|| ft_strcmp(str, "rr\n") || ft_strcmp(str, "rra\n")
+			|| ft_strcmp(str, "rrb\n") || ft_strcmp(str, "rra\n")))
 		return (1);
 	return (0);
 }
