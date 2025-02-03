@@ -24,6 +24,7 @@ static void	checker(t_list **stack_a, t_list **stack_b)
 		if (!is_valid_move(str))
 		{
 			free_list(stack_a);
+			free_list(stack_b);
 			write(2, "Error\n", 6);
 			exit(0);
 		}
@@ -34,7 +35,7 @@ static void	checker(t_list **stack_a, t_list **stack_b)
 	if (is_sorted(*stack_a) && !(*stack_b))
 		write(1, "OK\n", 2);
 	else
-		write(1, "ERROR\n", 6);
+		write(2, "ERROR\n", 6);
 }
 
 int	main(int argc, char **argv)
@@ -49,6 +50,7 @@ int	main(int argc, char **argv)
 		parse(&stack_a, argc, argv);
 		checker(&stack_a, &stack_b);
 		free_list(&stack_a);
+		free_list(&stack_b);
 	}
 	return (0);
 }
