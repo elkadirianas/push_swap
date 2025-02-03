@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*str;
+	char	*tmp;
 
 	atexit(f);
 	stack_a = NULL;
@@ -32,6 +33,7 @@ int	main(int argc, char **argv)
 		str = get_next_line(1);
 		while (str)
 		{
+			tmp = str;
 			if (!is_valid_move(str))
 			{
 				free_list(&stack_a);
@@ -39,6 +41,7 @@ int	main(int argc, char **argv)
 				exit(0);
 			}
 			str = get_next_line(1);
+			free(tmp);
 		}
 		free_list(&stack_a);
 	}
