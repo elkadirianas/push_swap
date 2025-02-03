@@ -20,28 +20,27 @@ static int	ft_isdigit(int c)
 	return (result);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s1[i] == s2[i] && i < n)
+	while (i < ft_strlen(s1))
+	{
+		if (s1[i] != s2[i])
+			return (0);
 		i++;
-	if (i < n)
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	return (0);
+	}
+	return (1);
 }
 
 int	is_valid_move(char *str)
 {
-	if (!ft_strncmp(str, "pa", 2) || !ft_strncmp(str, "pb", 2)
-		|| !ft_strncmp(str, "sa", 2) || !ft_strncmp(str, "sb", 2)
-		|| !ft_strncmp(str, "ss", 2) || !ft_strncmp(str, "ra", 2)
-		|| !ft_strncmp(str, "rb", 2) || !ft_strncmp(str, "rr", 2)
-		|| !ft_strncmp(str, "rra", 3) || !ft_strncmp(str, "rrb", 2)
-		|| !ft_strncmp(str, "rra", 2))
+	if ((!ft_strcmp(str, "pa") || !ft_strcmp(str, "pb") || !ft_strcmp(str, "sa")
+			|| !ft_strcmp(str, "sb") || !ft_strcmp(str, "ss") || !ft_strcmp(str,
+				"ra") || !ft_strcmp(str, "rb") || !ft_strcmp(str, "rr")
+			|| !ft_strcmp(str, "rra") || !ft_strcmp(str, "rrb")
+			|| !ft_strcmp(str, "rra")))
 		return (1);
 	return (0);
 }

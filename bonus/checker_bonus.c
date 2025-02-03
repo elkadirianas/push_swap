@@ -38,10 +38,10 @@ int	main(int argc, char **argv)
 			str = get_next_line(0);
 			free(tmp);
 		}
-		if(is_sorted(stack_a) && !stack_b)
-			write(1,"OK\n",2); 
+		if (is_sorted(stack_a) && !stack_b)
+			write(1, "OK\n", 2);
 		else
-			write(1,"ERROR\n",6); 
+			write(1, "ERROR\n", 6);
 		free_list(&stack_a);
 	}
 	return (0);

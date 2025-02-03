@@ -59,7 +59,7 @@ void				excute_move(t_list **stack_a, t_list **stack_b, char *str);
 
 // string utils
 long				ft_atol(const char *nbr);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
 int					is_valid_move(char *str);
 // utils
 void				swap_int(int *a, int *b);

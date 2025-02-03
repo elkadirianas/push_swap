@@ -14,35 +14,35 @@
 
 void	excute_move(t_list **stack_a, t_list **stack_b, char *str)
 {
-	if (!ft_strncmp(str, "sa", 2))
+	if (!ft_strcmp(str, "sa"))
 		swap(*stack_a);
-	else if (!ft_strncmp(str, "rra", 3))
+	else if (!ft_strcmp(str, "rra"))
 		rev_rotate(stack_a);
-	else if (!ft_strncmp(str, "rrb", 3))
+	else if (!ft_strcmp(str, "rrb"))
 		rev_rotate(stack_b);
-	else if (!ft_strncmp(str, "rrr", 3))
+	else if (!ft_strcmp(str, "rrr"))
 	{
 		rev_rotate(stack_a);
 		rev_rotate(stack_b);
 	}
-	else if (!ft_strncmp(str, "sb", 2))
+	else if (!ft_strcmp(str, "sb"))
 		swap(*stack_b);
-	else if (!ft_strncmp(str, "ss", 2))
+	else if (!ft_strcmp(str, "ss"))
 	{
 		swap(*stack_a);
 		swap(*stack_b);
 	}
-	else if (!ft_strncmp(str, "ra", 2))
+	else if (!ft_strcmp(str, "ra"))
 		rotate(stack_a);
-	else if (!ft_strncmp(str, "rb", 2))
+	else if (!ft_strcmp(str, "rb"))
 		rotate(stack_b);
-	else if (!ft_strncmp(str, "rr", 2))
+	else if (!ft_strcmp(str, "rr"))
 	{
 		rotate(stack_a);
 		rotate(stack_b);
 	}
-	else if (!ft_strncmp(str, "pa", 2))
+	else if (!ft_strcmp(str, "pa"))
 		push(stack_a, stack_b);
-	else if (!ft_strncmp(str, "pb", 2))
+	else if (!ft_strcmp(str, "pb"))
 		push(stack_b, stack_a);
 }
