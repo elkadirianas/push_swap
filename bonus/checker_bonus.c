@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	char	*str;
 
 	atexit(f);
 	stack_a = NULL;
@@ -28,6 +29,17 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		parse(&stack_a, argc, argv);
+		str = get_next_line(1);
+		while (str)
+		{
+			if (!is_valid_move(str))
+			{
+				free_list(&stack_a);
+				write(2, "Error\n", 6);
+				exit(0);
+			}
+			str = get_next_line(1);
+		}
 		free_list(&stack_a);
 	}
 	return (0);

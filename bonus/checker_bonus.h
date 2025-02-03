@@ -42,20 +42,20 @@ char				*ft_strjoinn(char const *s1, char const *s2);
 char				**free_splitted(char **splitted);
 char				**ft_split(char const *s, char c);
 
+// list_utils
+void				ft_lstadd_back(t_list **lst, int data);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstnew(int data);
+t_list				*ft_lstlast(t_list *lst);
+void				free_list(t_list **lst);
+int					is_sorted(t_list *lst);
 
-// list_utils 
-void	ft_lstadd_back(t_list **lst, int data); 
-int	ft_lstsize(t_list *lst); 
-t_list	*ft_lstnew(int data) ; 
-t_list	*ft_lstlast(t_list *lst); 
-void	free_list(t_list **lst); 
-int	is_sorted(t_list *lst); 
-
-// string utils      
-long	ft_atol(const char *nbr); 
-// utils 
-void	swap_int(int *a, int *b); 
-int	is_empty(char *str) ; 
-int	is_dup(t_list *a, int num); 
-int	is_valid(char *str) ; 
+// string utils
+long				ft_atol(const char *nbr);
+int					is_valid_move(char *str);
+// utils
+void				swap_int(int *a, int *b);
+int					is_empty(char *str);
+int					is_dup(t_list *a, int num);
+int					is_valid(char *str);
 #endif
