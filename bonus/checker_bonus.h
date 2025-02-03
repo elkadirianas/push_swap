@@ -50,8 +50,16 @@ t_list				*ft_lstlast(t_list *lst);
 void				free_list(t_list **lst);
 int					is_sorted(t_list *lst);
 
+// moves
+void				push(t_list **a, t_list **b);
+void				rev_rotate(t_list **lst);
+void				rotate(t_list **lst);
+void				swap(t_list *lst);
+void				excute_move(t_list **stack_a, t_list **stack_b, char *str);
+
 // string utils
 long				ft_atol(const char *nbr);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					is_valid_move(char *str);
 // utils
 void				swap_int(int *a, int *b);

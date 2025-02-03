@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 				write(2, "Error\n", 6);
 				exit(0);
 			}
+			excute_move(&stack_a, &stack_b, str);
 			str = get_next_line(1);
 			free(tmp);
 		}
