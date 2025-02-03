@@ -21,26 +21,17 @@ void	excute_move(t_list **stack_a, t_list **stack_b, char *str)
 	else if (!ft_strcmp(str, "rrb"))
 		rev_rotate(stack_b);
 	else if (!ft_strcmp(str, "rrr"))
-	{
-		rev_rotate(stack_a);
-		rev_rotate(stack_b);
-	}
+		rrr(stack_a, stack_b);
 	else if (!ft_strcmp(str, "sb"))
 		swap(*stack_b);
 	else if (!ft_strcmp(str, "ss"))
-	{
-		swap(*stack_a);
-		swap(*stack_b);
-	}
+		ss(*stack_a, *stack_b);
 	else if (!ft_strcmp(str, "ra"))
 		rotate(stack_a);
 	else if (!ft_strcmp(str, "rb"))
 		rotate(stack_b);
 	else if (!ft_strcmp(str, "rr"))
-	{
-		rotate(stack_a);
-		rotate(stack_b);
-	}
+		rr(stack_a, stack_b);
 	else if (!ft_strcmp(str, "pa"))
 		push(stack_a, stack_b);
 	else if (!ft_strcmp(str, "pb"))

@@ -55,6 +55,10 @@ void				push(t_list **a, t_list **b);
 void				rev_rotate(t_list **lst);
 void				rotate(t_list **lst);
 void				swap(t_list *lst);
+void				ss(t_list *stack_a, t_list *stack_b);
+void				rr(t_list **stack_a, t_list **stack_b);
+void				rrr(t_list **stack_a, t_list **stack_b);
+
 void				excute_move(t_list **stack_a, t_list **stack_b, char *str);
 
 // string utils
