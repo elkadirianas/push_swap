@@ -17,6 +17,19 @@ void	f(void)
 	system("leaks checker");
 }
 
+#include "stdio.h"
+static void	print_list(t_list *lst, char *str)
+{
+	printf("List %s : \t ", str);
+	while (lst)
+	{
+		printf("[ data : %d] --> ",lst->data);
+		lst = lst->next;
+	}
+	printf("NULL\n");
+}
+
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -30,6 +43,8 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		parse(&stack_a, argc, argv);
+		print_list(stack_a,"stack_a before"); 
+		print_list(stack_b,"stack_b before "); 
 		str = get_next_line(1);
 		while (str)
 		{
@@ -46,5 +61,7 @@ int	main(int argc, char **argv)
 		}
 		free_list(&stack_a);
 	}
+	print_list(stack_a,"stack_a after"); 
+	print_list(stack_b,"stack_b after"); 
 	return (0);
 }
