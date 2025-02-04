@@ -17,14 +17,14 @@ static void	ft_error(char **splitted_arg, t_list **a)
 	write(2, "Error\n", 6);
 	free_splitted(splitted_arg);
 	free_list(a);
-	exit(1);
+	exit(0);
 }
 
 static void	ft_error1(char *tmp)
 {
 	write(2, "Error\n", 6);
 	free(tmp);
-	exit(1);
+	exit(0);
 }
 
 static char	*join_args(int argc, char **argv)
