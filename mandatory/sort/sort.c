@@ -39,7 +39,7 @@ void	sort(t_list **stack_a, t_list **stack_b)
 
 	d = decide(stack_a);
 	size = ft_lstsize(*stack_a);
-	if (size == 1 || is_sorted(*stack_a))
+	if (is_sorted(*stack_a))
 		return ;
 	else if (size == 2)
 		sort_2(stack_a);
