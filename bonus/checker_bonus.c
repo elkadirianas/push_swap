@@ -33,7 +33,7 @@ static void	checker(t_list **stack_a, t_list **stack_b)
 		free(tmp);
 	}
 	if (is_sorted(*stack_a) && !(*stack_b))
-		write(1, "OK\n", 2);
+		write(1, "OK\n", 3);
 	else
 		write(2, "ERROR\n", 6);
 }
