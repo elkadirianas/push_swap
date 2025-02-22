@@ -25,6 +25,7 @@ static void	checker(t_list **stack_a, t_list **stack_b)
 		{
 			free_list(stack_a);
 			free_list(stack_b);
+			free(tmp);
 			write(2, "Error\n", 6);
 			exit(0);
 		}
@@ -35,7 +36,7 @@ static void	checker(t_list **stack_a, t_list **stack_b)
 	if (is_sorted(*stack_a) && !(*stack_b))
 		write(1, "OK\n", 3);
 	else
-		write(2, "ERROR\n", 6);
+		write(2, "KO\n", 3);
 }
 
 int	main(int argc, char **argv)

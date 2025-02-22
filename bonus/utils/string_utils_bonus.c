@@ -47,8 +47,8 @@ int	is_valid_move(char *str)
 
 long	ft_atol(const char *nbr)
 {
-	int					sign;
-	unsigned long long	res;
+	long	res;
+	int		sign;
 
 	sign = 1;
 	res = 0;
@@ -62,8 +62,10 @@ long	ft_atol(const char *nbr)
 	}
 	while (ft_isdigit(*nbr))
 	{
+		if (res > res * 10 + (*nbr - '0'))
+			return (2147483649);
 		res = res * 10 + (*nbr - '0');
 		nbr++;
 	}
-	return ((long)res * sign);
+	return (res * sign);
 }
